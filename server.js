@@ -17,14 +17,15 @@ function handleRequest(request, response){
     }
 }
 
-dispatcher.onGet("/page1", function(req, res) {
+dispatcher.onGet("/", function(req, res) {
     res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('Page One');
+    res.end('It works');
 });    
 
-dispatcher.onGet("/page2", function(req, res) {
+dispatcher.onPost("/calc", function(req, res) {
     res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('Page TWO');
+	var parsed = JSON.parse(req.body);
+    res.end(parsed.me);
 });
 
 
