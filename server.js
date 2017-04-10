@@ -1,4 +1,4 @@
-// call the packages we need
+﻿// call the packages we need
 var express    = require('express');        // call express
 var app        = express();                 // define our app using express
 var http = require('http');
@@ -542,7 +542,7 @@ obj2 = JSON.parse(plan2pc);
     }
 
 	
-	return ["£" + rlo, loantype, loancomp, cancelledy + " years, " + cancelledm + " months", "£" + eso, "£" + arto, "£" + artmo, shifo + "%"];
+	return ["£" + rlo + !, loantype + !, loancomp + !, cancelledy + " years, " + cancelledm + " months" + !, "£" + eso + !, "£" + arto + !, "£" + artmo + !, shifo + "%" + !];
     // document.getElementById('rl').innerHTML = "£" + rlo;
     // document.getElementById('loantype').innerHTML = loantype;
     // document.getElementById('tcanc').innerHTML = loancomp;
