@@ -32,7 +32,7 @@ dispatcher.onPost("/calc", function(req, res) {
 dispatcher.onPost("/recalc", function(req, res) {
     res.writeHead(200, {'Content-Type': 'text/plain'});
 	var p = JSON.parse(req.body);
-	var resultC = recalculate(p.arc, p.td_arc, p.curr_arc, p.bulk_ar, p.curr_bulk_ar, p.gef, p.tdn, p.let_p1, p.let_p2, p.loantype, p.uet, p.rl, p.cancelledl);
+	var resultC = recalculate(p.arc, p.td_arc, p.curr_arc, p.bulk_ar, p.curr_bulk_ar, p.gef, p.tdn, p.let_p1, p.let_p2, p.loantype, p.uet, p.rl, p.cancelledl, p.let_pl, p.j1);
 	res.end(JSON.stringify(resultC, null, 2));
 });
 
@@ -550,13 +550,13 @@ var cancelledl;
     }
 
 	
-	return ["£" + rlo + "!", loantype + "!", loancomp + "!", cancelledy + " years, " + cancelledm + " months" + "!", "£" + eso + "!", "£" + arto + "!", "£" + artmo + "!", shifo + "%" + "!", gef + "!", tdn +"!", let_p1 + "!", let_p2+ "!", uet+ "!", rl + "!", cancelledl];
+	return ["£" + rlo + "!", loantype + "!", loancomp + "!", cancelledy + " years, " + cancelledm + " months" + "!", "£" + eso + "!", "£" + arto + "!", "£" + artmo + "!", shifo + "%" + "!", gef + "!", tdn +"!", let_p1 + "!", let_p2+ "!", uet+ "!", rl + "!", cancelledl + "!", let_pl + "!", j1];
 }
 
 /************************************************************************************/
 /********************************* RECALCULATE FUNCTION *****************************/
 /************************************************************************************/
-function recalculate(arc, td_arc, curr_arc, bulk_ar, curr_bulk_ar, gef, tdn, let_p1, let_p2, loantype, uet, rl, cancelledl) {
+function recalculate(arc, td_arc, curr_arc, bulk_ar, curr_bulk_ar, gef, tdn, let_p1, let_p2, loantype, uet, rl, cancelledl, let_pl, j1) {
 
 	var tdn_arc;
 	var exch_arc;
